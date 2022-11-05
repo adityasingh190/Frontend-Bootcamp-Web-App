@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+
+
+
+ <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Frontend Bootcamp</title>
+<style>
+
+ .checked
+  {
+    color:#e59819;
+  }
+.k a:hover{
+color:black;
+}
+.k ul li:hover{
+background-color:LightGray;
+color:black;
+}
+
+</style>
+  </head>
+  <body >
+    <!-- Navbar -->
+    
+     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+ <img style= display: block;"
+        src="data:image/png;base64,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"
+        height="40"
+        alt="e-Logo"
+        loading="lazy"
+      />
+Frontend Bootcamp</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+        <li class="nav-item " ><a class="nav-link " href="index1.html">Home</a></li>
+           
+  <div class="dropdown k" >
+    <button class="btn btn-default dropdown-toggle" style="color:white;" type="button" data-toggle="dropdown">Course
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="active" ><a style="padding-left:5px;" href="#" style="color:black;">Courses</a></li>
+      <li class="disabled" ><a  style="padding-left:5px;" href="CourseDetails.html">Course Details</a></li>
+     
+     
+    </ul>
+  </div>
+
+       <li class="nav-item">
+              <a href="About.html" class="nav-link">About</a>
+            </li>
+ <li class="nav-item">
+              <a href="Contact.html" class="nav-link">Contact</a>
+            </li>
+             <li class="nav-item">
+              <a href="login.html" class="nav-link">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<section>
+<div class="container-fluid bg-dark" style="margin-top:10px; height:250px;">
+        <div class="d-sm-flex align-items-center justify-content-between" style="padding-left:600px; padding-top:90px;">
+          <div >
+            <h1 style="font-size:70px;" class="text-light">Courses</h1>
+            </div>
+            </div>
+            </div>
+            </section>
+
+<section   style="padding-top:100px; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Z8yRtbx_7sLTd5T586VbDzJUgFhjGJT-ZA&usqp=CAU');">
+
+<div class="container-fluid ">
+<h1 class="text-light">Varienty of Online Courses</h1>
+
+       <div class="row row-cols-1 row-cols-md-3 g-4 ">
+       <div class="col" >
+        <a href="CourseDetails1.html" style="text-decoration: none; color:black;" >
+  <div class="card" style="height:450px; width:400px;">
+    <img  src="img/courses/1.png" class="card-img-top img-fluid"  alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mobile App design step by step</h5>
+      <p class="card-text">Dr. Angela u</p>
+      <p class="card-text">4
+     <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+            </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    </div>
+    </a>
+  </div>
+  
+  <div class="col">
+  <a href="CourseDetails.html" style="text-decoration: none; color:black;" >
+  <div class="card"style="height:450px; width:400px;">
+  
+    <img  src="img/courses/2.png" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">UI/UX design with Adobe XD with Anderson</h5>
+      <p class="card-text">Dr.Anderson Person</p>
+ <p class="card-text">3
+     <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+            </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+     
+    </div>
+    </div>
+    </a>
+  </div>
+  
+  <div class="col">
+   <a href="CourseDetails2.html" style="text-decoration: none; color:black;" >
+  <div class="card" style="height:450px; width:400px;">
+    <img  src="img/courses/3.png" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Wordpress theme development</h5>
+      <p class="card-text">Dr. Angela Mathews</p>
+<p class="card-text">4
+     <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked""></span>
+<span class="fa fa-star"></span>
+            </p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  </a>
+</div>
+</div>
+</div>
+
+</section>
+
+
+ <div class="testimonial_area testimonial_bg_1 overlay" style="margin-top:500px;">
+        <div class="testmonial_active owl-carousel">
+            <div class="single_testmoial">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="testmonial_text text-center">
+                                <div class="author_img">
+                                    <img src="img/testmonial/author_img.png" alt="">
+                                </div>
+                                <p>
+                                    "Working in conjunction with humanitarian aid <br> agencies we have supported
+                                    programmes to <br>
+                                    alleviate.
+                                    human suffering.
+
+                                </p>
+                                <span>- Jquileen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_testmoial">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="testmonial_text text-center">
+                                <div class="author_img">
+                                    <img src="img/testmonial/author_img.png" alt="">
+                                </div>
+                                <p>
+                                    "Working in conjunction with humanitarian aid <br> agencies we have supported
+                                    programmes to <br>
+                                    alleviate.
+                                    human suffering.
+
+                                </p>
+                                <span>- Jquileen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- testimonial_area_end -->
+
+    <!-- our_courses_start -->
+    <div class="our_courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <h3>Our Course Speciality</h3>
+                        <p>Your domain control panel is designed for ease-of-use and <br>
+                            allows for all aspects of your domains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-lg-6">
+                    <div class="single_course text-center">
+                        <div class="icon">
+                            <i class="flaticon-art-and-design"></i>
+                        </div>
+                        <h3>Premium Quality</h3>
+                        <p>
+                           Learn to create useful, usable and visually compelling UI design for any kind of app, site or system.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6">
+                    <div class="single_course text-center">
+                        <div class="icon blue">
+                            <i class="flaticon-business-and-finance"></i>
+                        </div>
+                        <h3>Integrated Solution Overview</h3>
+                        <p>
+                            Learn how to effectively organize and economize visual information
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6">
+                    <div class="single_course text-center">
+                        <div class="icon">
+                            <i class="flaticon-premium"></i>
+                        </div>
+                        <h3>On-Demand Learning</h3>
+                        <p>
+                            Whether you want to learn or to share what you know, you’ve come to the right place. As a global destination for online learning, we connect people through knowledge.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-6">
+                    <div class="single_course text-center">
+                        <div class="icon gradient">
+                            <i class="flaticon-crown"></i>
+                        </div>
+                        <h3>Intensive learning</h3>
+                        <p>
+                           Frontend Bootcamp's instructors are real people who are passionate about sharing what they know with students all over the world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="our_latest_blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <h3>Our Latest Blog</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_latest_blog">
+                        <div class="thumb">
+                            <img src="img/latest_blog/1.png" alt="">
+                        </div>
+                        <div class="content_blog">
+                            <div class="date">
+                                <p>12 Jun, 2019 in <a href="#">Design tips</a></p>
+                            </div>
+                            <div class="blog_meta">
+                                <h3><a href="#">Commitment to dedicated Support</a></h3>
+                            </div>
+                            <p class="blog_text">
+                                Talented people are everywhere, but opportunities can be harder to find. With Udemy, Mohammed — a Syrian refugee — was able to start a new career and a new life in Germany.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_latest_blog">
+                        <div class="thumb">
+                            <img src="img/latest_blog/2.png" alt="">
+                        </div>
+                        <div class="content_blog">
+                            <div class="date">
+                                <p>12 Jun, 2019 in <a href="#">Design tips</a></p>
+                            </div>
+                            <div class="blog_meta">
+                                <h3><a href="#">Commitment to dedicated Support</a></h3>
+                            </div>
+                            <p class="blog_text">
+                                Whatever your learning style, we have a course that fits. Coming from instructors all over the world, our courses span over 75 languages and cover just about anything you’d want to know.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_latest_blog">
+                        <div class="thumb">
+                            <img src="img/latest_blog/3.png" alt="">
+                        </div>
+                        <div class="content_blog">
+                            <div class="date">
+                                <p>12 Jun, 2019 in <a href="#">Design tips</a></p>
+                            </div>
+                            <div class="blog_meta">
+                                <h3><a href="#">Commitment to dedicated Support</a></h3>
+                            </div>
+                            <p class="blog_text">
+                              We help organizations of all types and sizes prepare for the path ahead — wherever it leads. Our curated collection of business and technical courses help companies, governments, and nonprofits go further by placing learning at the center of their strategies.
+
+Learn more
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer footer_bg_1 " >
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                 <p class="lead"> 2022 Frontend Bootcamp</p>
+                            </div>
+                            <p>
+                                Firmament morning sixth subdue darkness creeping gathered divide our let god moving.
+                                Moving in fourth air night bring upon it beast let you dominion likeness open place day
+                                great.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Courses
+                            </h3>
+                            <ul>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#"> Photoshop</a></li>
+                                <li><a href="#">Illustrator</a></li>
+                                <li><a href="#">Adobe XD</a></li>
+                                <li><a href="#">UI/UX</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Resourches
+                            </h3>
+                            <ul>
+                                <li><a href="#">Free Adobe XD</a></li>
+                                <li><a href="#">Tutorials</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> About</a></li>
+                                <li><a href="#"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <p>
+                                200, D-block, Green lane USA <br>
+                                +10 367 467 8934 <br>
+                                edumark@contact.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                
+<div style="margin-right:100px;">
+<a href="#" class="position-absolute bottom-0 end-0 p-5" >
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a></div>
+                    </div>
+                </div>
+           
+    </footer>
+    <!-- footer -->
+
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <div class="logo text-center">
+                    <a href="#">
+                        <img src="img/form-logo.png" alt="">
+                    </a>
+                </div>
+                <h3>Sign in</h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <input type="email" placeholder="Enter email">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed_btn_orange">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="doen_have_acc">Don’t have an account? <a class="dont-hav-acc" href="#test-form2">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+
+    <!-- form itself end-->
+    <form id="test-form2" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <div class="logo text-center">
+                    <a href="#">
+                        <img src="img/form-logo.png" alt="">
+                    </a>
+                </div>
+                <h3>Resistration</h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <input type="email" placeholder="Enter email">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="Password" placeholder="Confirm password">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed_btn_orange">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</body>
+</html>

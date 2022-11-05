@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Bootcamp</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+<img style=" margin-right:10px; display: block;"
+        src="data:image/png;base64,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"
+        height="20"
+        alt="e-Logo"
+        loading="lazy"
+      />
+        
+ 
+        <a href="#" class="navbar-brand">
+
+Frontend Bootcamp</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+        <li class="nav-item " ><a class="nav-link " href="index1.html">Home</a></li>
+          
+ <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Courses</a>
+        <ul class="dropdown-menu">
+ <li><a class="dropdown-item" href="Course1.html">Courses</a></li>
+          <li><a class="dropdown-item" href="CourseDetails.html">Course Details</a></li>
+          
+        </ul>
+      </li>
+
+       <li class="nav-item">
+              <a href="About.html" class="nav-link">About</a>
+            </li>
+ <li class="nav-item">
+              <a href="Contact.html" class="nav-link active">Contact</a>
+            </li>
+<li class="nav-item">
+              <a href="Login.html" class="nav-link ">Logout</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<section>
+<div class="container-fluid bg-dark" style="margin-top:10px; height:250px;">
+        <div class="d-sm-flex align-items-center justify-content-between" style="padding-left:600px; padding-top:90px;">
+          <div >
+            <h1 style="font-size:70px;" class="text-light">Contact</h1>
+            </div>
+            </div>
+            </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <section class="p-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-4">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold">Main Location:</span>  IDFC FIRST Bank Ltd Naman Chembers, C-32, G-Block, Bandra-Kurla Complex, Bandra East, Mumbai - 400051,
+India
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Enrollment Phone:</span> +919370728610
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student Phone:</span> +917754981111
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Enrollment Email:</span> 
+                enroll@frontendbc.test
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student Email:</span>
+                student@frontendbc.test
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead"> 2022 Frontend Bootcamp</p>
+
+      
+      </div>
+    </footer>
+ <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+
+    <script>
+      mapboxgl.accessToken =
+        'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-71.060982, 42.35725],
+        zoom: 18,
+      })
+    </script>
+</body>
+<html>
